@@ -4,7 +4,7 @@ const config = require("config");
 module.exports = function () {
   mongoose
     .connect(
-      `mongodb+srv://${process.env.MongoDBUsername}:${process.env.MongoDBPassword})}@cluster0.rol3f.mongodb.net/?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.MongoDBUsername}:${process.env.MongoDBPassword}@cluster0.rol3f.mongodb.net/?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
