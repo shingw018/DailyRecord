@@ -13,4 +13,6 @@ require("./startup/db.js")();
 const port = 4000;
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 
+console.log(process.env);
+
 module.exports = server;
