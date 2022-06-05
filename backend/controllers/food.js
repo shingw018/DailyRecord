@@ -7,7 +7,8 @@ exports.getFood = function (req, res) {
 
 exports.postFood = async (req, res) => {
   //save the input
-  const food = new Food(_.pick(req.body, ["name", "energy", "carbohydrates", "fat", "protein", "sugar", "fee"]));
+  console.log(req.body);
+  const food = new Food(_.pick(req.body.data, ["name", "energy", "carbohydrates", "fat", "protein", "sugar", "fee"]));
   food.lastUpdated = new Date().toISOString().replace(/[T|Z]/g, "");
   await food.save();
 
