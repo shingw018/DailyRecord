@@ -34,7 +34,7 @@ class Transport extends Component {
 
     try {
       //Send the data and create the vote via doing post request
-      await API.post("/api/transport", { data: dataToSend }, {});
+      await API.post("api/transport", { data: dataToSend }, {});
       this.setState({ successMessage: "Done" });
     } catch (ex) {
       this.setState({ error: true, errorMessage: ex });
