@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "./api.jsx";
 
-class MainPage extends Component {
+class Food extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -105,7 +105,7 @@ class MainPage extends Component {
               />
             </div>
             <div className="form-group m-3">
-              <label htmlFor="title" className="form-label">
+              <label htmlFor="foodEnergy" className="form-label">
                 Food Energy
               </label>
               <input
@@ -119,7 +119,7 @@ class MainPage extends Component {
               />
             </div>
             <div className="form-group m-3">
-              <label htmlFor="items" className="form-label">
+              <label htmlFor="foodProtein" className="form-label">
                 Food Protein
               </label>
               <input
@@ -133,7 +133,7 @@ class MainPage extends Component {
               />
             </div>
             <div className="form-group m-3">
-              <label htmlFor="items" className="form-label">
+              <label htmlFor="foodFat" className="form-label">
                 Food Fat
               </label>
               <input
@@ -147,7 +147,7 @@ class MainPage extends Component {
               />
             </div>
             <div className="form-group m-3">
-              <label htmlFor="items" className="form-label">
+              <label htmlFor="foodSugar" className="form-label">
                 Food Sugar
               </label>
               <input
@@ -161,7 +161,7 @@ class MainPage extends Component {
               />
             </div>
             <div className="form-group m-3">
-              <label htmlFor="items" className="form-label">
+              <label htmlFor="foodCarbohydrates" className="form-label">
                 Food Carbohydrates
               </label>
               <input
@@ -175,7 +175,7 @@ class MainPage extends Component {
               />
             </div>
             <div className="form-group m-3">
-              <label htmlFor="items" className="form-label">
+              <label htmlFor="foodFee" className="form-label">
                 Food Fee
               </label>
               <input
@@ -202,4 +202,4 @@ class MainPage extends Component {
   }
 }
 
-export default MainPage;
+export default Food;

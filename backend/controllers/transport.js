@@ -7,7 +7,7 @@ exports.getTransport = function (req, res) {
 
 exports.postTransport = async (req, res) => {
   //save the input
-  const transport = new Transport(_.pick(req.body, ["from", "to", "machine", "fee"]));
+  const transport = new Transport(_.pick(req.body.data, ["from", "to", "machine", "fee"]));
   transport.lastUpdated = new Date().toISOString().replace(/[T|Z]/g, "");
   await transport.save();
 

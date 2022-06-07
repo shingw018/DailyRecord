@@ -13,8 +13,4 @@ require("./startup/db.js")();
 const port = 4000;
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 
-console.log(process.env);
-console.log(process.env.MongoDBUsername);
-console.log(process.env.MongoDBPassword);
-
 module.exports = server;
