@@ -74,7 +74,7 @@ class AddTransport extends Component {
                 type="text"
                 className="form-control"
                 id="from"
-                placeholder="FROM"
+                placeholder="From"
                 onChange={this.handleFromChange}
                 value={this.state.from}
                 spellCheck="false"
@@ -89,7 +89,7 @@ class AddTransport extends Component {
                 type="text"
                 className="form-control"
                 id="to"
-                placeholder="TO"
+                placeholder="To"
                 onChange={this.handleToChange}
                 value={this.state.to}
                 spellCheck="false"
@@ -104,7 +104,7 @@ class AddTransport extends Component {
                 type="text"
                 className="form-control"
                 id="machine"
-                placeholder="MACHINE"
+                placeholder="Machine"
                 onChange={this.handleMachineChange}
                 value={this.state.machine}
                 spellCheck="false"
@@ -119,7 +119,7 @@ class AddTransport extends Component {
                 type="text"
                 className="form-control"
                 id="fee"
-                placeholder="FEE"
+                placeholder="Fee"
                 onChange={this.handleFeeChange}
                 value={this.state.fee}
                 spellCheck="false"
