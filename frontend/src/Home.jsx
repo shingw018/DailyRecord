@@ -15,24 +15,42 @@ class MainPage extends Component {
       <div className="container">
         <h2 className="text-center m-3 text-dark">Daily Record</h2>
         <div className="container row g-0 my-2 p-2 text-center bg-secondary text-light border border-secondary rounded">
-          <div className="div-button col border-light border-end" onClick={() => this.setState({ Mode: "View" })}>
+          <div
+            className={`div-button col border-light border-end ${this.state.Mode === "View" && " fw-bold"}`}
+            onClick={() => this.setState({ Mode: "View" })}
+          >
             View
           </div>
-          <div className="div-button col" onClick={() => this.setState({ Mode: "Add" })}>
+          <div
+            className={`div-button col ${this.state.Mode === "Add" && " fw-bold"}`}
+            onClick={() => this.setState({ Mode: "Add" })}
+          >
             Add
           </div>
         </div>
         <div className="container row g-0 my-2 p-2 text-center bg-secondary text-light border border-secondary rounded">
-          <div className="div-button col border-light border-end" onClick={() => this.setState({ Target: "Food" })}>
+          <div
+            className={`div-button col border-light border-end ${this.state.Target === "Food" && " fw-bold"}`}
+            onClick={() => this.setState({ Target: "Food" })}
+          >
             Food
           </div>
-          <div className="div-button col border-light border-end" onClick={() => this.setState({ Target: "Trans" })}>
+          <div
+            className={`div-button col border-light border-end ${this.state.Target === "Trans" && " fw-bold"}`}
+            onClick={() => this.setState({ Target: "Trans" })}
+          >
             Trans
           </div>
-          <div className="div-button col border-light border-end" onClick={() => this.setState({ Target: "Activity" })}>
+          <div
+            className={`div-button col border-light border-end ${this.state.Target === "Activity" && " fw-bold"}`}
+            onClick={() => this.setState({ Target: "Activity" })}
+          >
             Activity
           </div>
-          <div className="div-button col" onClick={() => this.setState({ Target: "Diary" })}>
+          <div
+            className={`div-button col ${this.state.Target === "Diary" && " fw-bold"}`}
+            onClick={() => this.setState({ Target: "Diary" })}
+          >
             Diary
           </div>
         </div>

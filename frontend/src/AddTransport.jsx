@@ -134,7 +134,7 @@ class AddTransport extends Component {
               <input
                 className="btn btn-md btn-outline-primary btn-sm"
                 type="submit"
-                value="Transport Submit"
+                value="Submit"
                 style={{ float: "right" }}
               />
             </div>
