@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import API from "./api.jsx";
 
-class Transport extends Component {
+class AddTransport extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      from: undefined,
-      to: undefined,
-      machine: undefined,
-      fee: undefined,
+      from: "",
+      to: "",
+      machine: "",
+      fee: "",
       error: false,
       errorMessage: undefined,
       successMessage: undefined,
@@ -57,12 +57,13 @@ class Transport extends Component {
     this.setState({ fee: e.target.value });
   }
 
+  btnNoFocus(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div className="container">
-        <div className="container">
-          <h2 className="text-center m-2">Transport Record</h2>
-        </div>
         <div className="contianer">
           <form onSubmit={this.handleTransportSubmit} id="transportForm">
             <div className="form-group m-3">
@@ -73,8 +74,9 @@ class Transport extends Component {
                 type="text"
                 className="form-control"
                 id="from"
-                placeholder="from"
+                placeholder="FROM"
                 onChange={this.handleFromChange}
+                value={this.state.from}
                 spellCheck="false"
                 required
               />
@@ -87,8 +89,9 @@ class Transport extends Component {
                 type="text"
                 className="form-control"
                 id="to"
-                placeholder="To"
+                placeholder="TO"
                 onChange={this.handleToChange}
+                value={this.state.to}
                 spellCheck="false"
                 required
               />
@@ -101,8 +104,9 @@ class Transport extends Component {
                 type="text"
                 className="form-control"
                 id="machine"
-                placeholder="Machine"
+                placeholder="MACHINE"
                 onChange={this.handleMachineChange}
+                value={this.state.machine}
                 spellCheck="false"
                 required
               />
@@ -115,8 +119,9 @@ class Transport extends Component {
                 type="text"
                 className="form-control"
                 id="fee"
-                placeholder="Fee"
+                placeholder="FEE"
                 onChange={this.handleFeeChange}
+                value={this.state.fee}
                 spellCheck="false"
                 required
               />
@@ -127,7 +132,7 @@ class Transport extends Component {
             <div className="container m-3">{this.state.successMessage}</div>
             <div className="container">
               <input
-                className="btn btn-md btn-primary"
+                className="btn btn-md btn-outline-primary btn-sm"
                 type="submit"
                 value="Transport Submit"
                 style={{ float: "right" }}
@@ -140,4 +145,4 @@ class Transport extends Component {
   }
 }
 
-export default Transport;
+export default AddTransport;

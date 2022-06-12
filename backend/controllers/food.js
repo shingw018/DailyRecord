@@ -8,10 +8,10 @@ exports.getFood = function (req, res) {
 exports.postFood = async (req, res) => {
   //save the input
   console.log(req.body);
-  const food = new Food(_.pick(req.body.data, ["name", "energy", "carbohydrates", "fat", "protein", "sugar", "fee"]));
-  food.lastUpdated = new Date().toISOString().replace(/[T]/g, " ");
-  food.lastUpdated = food.lastUpdated.replace(/[Z]/g, "");
-  await food.save();
+  // const food = new Food(_.pick(req.body.data, ["name", "energy", "carbohydrates", "fat", "protein", "sugar", "fee"]));
+  // food.lastUpdated = new Date().toISOString().replace(/[T]/g, " ");
+  // food.lastUpdated = food.lastUpdated.replace(/[Z]/g, "");
+  // await food.save();
 
   //return the input
   res.json(food);

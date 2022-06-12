@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import API from "./api.jsx";
 
-class Food extends Component {
+class AddFood extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      foodName: undefined,
-      foodEnergy: undefined,
-      foodCarbohydrates: undefined,
-      foodFat: undefined,
-      foodProtein: undefined,
-      foodSugar: undefined,
-      foodFee: undefined,
+      foodName: "",
+      foodEnergy: "",
+      foodCarbohydrates: "",
+      foodFat: "",
+      foodProtein: "",
+      foodSugar: "",
+      foodFee: "",
       error: false,
-      errorMessage: undefined,
-      successMessage: undefined,
+      errorMessage: "",
+      successMessage: "",
     };
 
     this.handleFoodSubmit = this.handleFoodSubmit.bind(this);
@@ -25,7 +25,12 @@ class Food extends Component {
     this.handleFoodFatChange = this.handleFoodFatChange.bind(this);
     this.handleFoodCarbohydratesChange = this.handleFoodCarbohydratesChange.bind(this);
     this.handleFoodFeeChange = this.handleFoodFeeChange.bind(this);
+    this.setAllNutriZero = this.setAllNutriZero.bind(this);
+    this.resetForm = this.resetForm.bind(this);
+    this.saveFood = this.saveFood.bind(this);
+    this.btnNoFocus = this.btnNoFocus.bind(this);
   }
+
   async handleFoodSubmit(e) {
     //send { foodName, foodEnergy, foodCarbohydrates, foodFat, foodProtein, foodSugar, foodFee }
     e.preventDefault();
@@ -48,7 +53,16 @@ class Food extends Component {
     try {
       //Send the data and create the vote via doing post request
       await API.post("api/food", { data: dataToSend }, {});
-      this.setState({ successMessage: "Done" });
+      this.setState({
+        successMessage: "Done",
+        foodName: "",
+        foodEnergy: "",
+        foodCarbohydrates: "",
+        foodFat: "",
+        foodProtein: "",
+        foodSugar: "",
+        foodFee: "",
+      });
     } catch (ex) {
       this.setState({ error: true, errorMessage: ex });
     }
@@ -82,14 +96,69 @@ class Food extends Component {
     this.setState({ foodFee: e.target.value });
   }
 
+  setAllNutriZero(e) {
+    this.setState({ foodEnergy: 0, foodProtein: 0, foodFat: 0, foodSugar: 0, foodCarbohydrates: 0 });
+  }
+
+  resetForm(e) {
+    this.setState({
+      foodName: "",
+      foodEnergy: "",
+      foodCarbohydrates: "",
+      foodFat: "",
+      foodProtein: "",
+      foodSugar: "",
+      foodFee: "",
+      error: false,
+      errorMessage: "",
+      successMessage: "",
+    });
+  }
+
+  saveFood(e) {}
+
+  btnNoFocus(e) {
+    e.preventDefault();
+  }
+
   render() {
+    const templateStyle = {
+      margin: "20px",
+      width: "20px",
+      height: "20px",
+      borderRadius: "50%",
+      fontSize: "12px",
+      lineHeight: "20px",
+      textAlign: "center",
+      background: "#808080",
+      color: "#fff",
+    };
+
     return (
       <div className="container">
         <div className="container">
-          <h2 className="text-center m-2">Food Record</h2>
+          <button
+            type="button"
+            className="btn btn-outline-secondary btn-sm"
+            onClick={this.setAllNutriZero}
+            onMouseDown={this.btnNoFocus}
+          >
+            Set Zero
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-info btn-sm float-end"
+            onClick={this.saveFood}
+            onMouseDown={this.btnNoFocus}
+          >
+            Save Template
+          </button>
+        </div>
+        <div className="container m-2">
+          <div style={templateStyle}>1</div>
         </div>
         <div className="contianer">
-          <form onSubmit={this.handleFoodSubmit} id="foodForm">
+          <form onSubmit={this.handleFoodSubmit} id="foodForm" autoComplete="off" className="m-4">
             <div className="form-group m-3">
               <label htmlFor="foodName" className="form-label">
                 Food Name
@@ -98,8 +167,9 @@ class Food extends Component {
                 type="text"
                 className="form-control"
                 id="foodName"
-                placeholder="food name"
+                placeholder="Food Name"
                 onChange={this.handleFoodNameChange}
+                value={this.state.foodName}
                 spellCheck="false"
                 required
               />
@@ -108,12 +178,19 @@ class Food extends Component {
               <label htmlFor="foodEnergy" className="form-label">
                 Food Energy
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark float-end"
+                onClick={() => this.setState({ foodEnergy: 0 })}
+              >
+                0
+              </span>
               <input
                 type="text"
                 className="form-control"
                 id="foodEnergy"
-                placeholder="food energy"
+                placeholder="Food Energy"
                 onChange={this.handleFoodEnergyChange}
+                value={this.state.foodEnergy}
                 spellCheck="false"
                 required
               />
@@ -122,12 +199,19 @@ class Food extends Component {
               <label htmlFor="foodProtein" className="form-label">
                 Food Protein
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark float-end"
+                onClick={() => this.setState({ foodProtein: 0 })}
+              >
+                0
+              </span>
               <input
                 type="text"
                 className="form-control"
                 id="foodProtein"
-                placeholder="food protein"
+                placeholder="Food Protein"
                 onChange={this.handleFoodProteinChange}
+                value={this.state.foodProtein}
                 spellCheck="false"
                 required
               />
@@ -136,12 +220,19 @@ class Food extends Component {
               <label htmlFor="foodFat" className="form-label">
                 Food Fat
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark float-end"
+                onClick={() => this.setState({ foodFat: 0 })}
+              >
+                0
+              </span>
               <input
                 type="text"
                 className="form-control"
                 id="foodFat"
-                placeholder="food fat"
+                placeholder="Food Fat"
                 onChange={this.handleFoodFatChange}
+                value={this.state.foodFat}
                 spellCheck="false"
                 required
               />
@@ -150,12 +241,19 @@ class Food extends Component {
               <label htmlFor="foodSugar" className="form-label">
                 Food Sugar
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark float-end"
+                onClick={() => this.setState({ foodSugar: 0 })}
+              >
+                0
+              </span>
               <input
                 type="text"
                 className="form-control"
                 id="foodSugar"
-                placeholder="food sugar"
+                placeholder="Food Sugar"
                 onChange={this.handleFoodSugarChange}
+                value={this.state.foodSugar}
                 spellCheck="false"
                 required
               />
@@ -164,12 +262,19 @@ class Food extends Component {
               <label htmlFor="foodCarbohydrates" className="form-label">
                 Food Carbohydrates
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark float-end"
+                onClick={() => this.setState({ foodCarbohydrates: 0 })}
+              >
+                0
+              </span>
               <input
                 type="text"
                 className="form-control"
                 id="foodCarbohydrates"
-                placeholder="food carbohydrates"
+                placeholder="Food Carbohydrates"
                 onChange={this.handleFoodCarbohydratesChange}
+                value={this.state.foodCarbohydrates}
                 spellCheck="false"
                 required
               />
@@ -178,12 +283,19 @@ class Food extends Component {
               <label htmlFor="foodFee" className="form-label">
                 Food Fee
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark float-end"
+                onClick={() => this.setState({ foodFee: 0 })}
+              >
+                0
+              </span>
               <input
                 type="text"
                 className="form-control"
                 id="foodFee"
-                placeholder="food fee"
+                placeholder="Food Fee"
                 onChange={this.handleFoodFeeChange}
+                value={this.state.foodFee}
                 spellCheck="false"
                 required
               />
@@ -193,7 +305,10 @@ class Food extends Component {
             </div>
             <div className="container m-3">{this.state.successMessage}</div>
             <div className="container">
-              <input className="btn btn-md btn-primary" type="submit" value="Food Submit" style={{ float: "right" }} />
+              <button className="btn btn-md btn-outline-warning btn-sm" onClick={this.resetForm}>
+                Reset
+              </button>
+              <input className="btn btn-md btn-outline-primary float-end btn-sm" type="submit" value="Submit" />
             </div>
           </form>
         </div>
@@ -202,4 +317,4 @@ class Food extends Component {
   }
 }
 
-export default Food;
+export default AddFood;
