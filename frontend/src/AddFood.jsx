@@ -115,8 +115,6 @@ class AddFood extends Component {
     });
   }
 
-  saveFood(e) {}
-
   btnNoFocus(e) {
     e.preventDefault();
   }
@@ -133,18 +131,10 @@ class AddFood extends Component {
           >
             Set Zero
           </button>
-          <button
-            type="button"
-            className="btn btn-outline-info btn-sm float-end"
-            onClick={this.saveFood}
-            onMouseDown={this.btnNoFocus}
-          >
-            Save Template
-          </button>
         </div>
         <div className="container mt-3">
           <span
-            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            className="badge rounded-pill bg-light text-dark div-button m-1 border"
             onClick={() =>
               this.setState({
                 foodName: "旬之果物杯(火龍果)",
@@ -160,7 +150,7 @@ class AddFood extends Component {
             果物杯(火龍果)
           </span>
           <span
-            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            className="badge rounded-pill bg-light text-dark div-button m-1 border"
             onClick={() =>
               this.setState({
                 foodName: "濃香蛋汁牛壽喜燒御結",
@@ -176,7 +166,7 @@ class AddFood extends Component {
             壽喜燒御結
           </span>
           <span
-            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            className="badge rounded-pill bg-light text-dark div-button m-1 border"
             onClick={() =>
               this.setState({
                 foodName: "秋鮭三文魚御結",
@@ -192,7 +182,7 @@ class AddFood extends Component {
             三文魚御結
           </span>
           <span
-            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            className="badge rounded-pill bg-light text-dark div-button m-1 border"
             onClick={() =>
               this.setState({
                 foodName: "蒲燒三文魚腩御結",
@@ -208,7 +198,7 @@ class AddFood extends Component {
             三文魚腩御結
           </span>
           <span
-            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            className="badge rounded-pill bg-light text-dark div-button m-1 border"
             onClick={() =>
               this.setState({
                 foodName: "本格和風燒牛肉御結",

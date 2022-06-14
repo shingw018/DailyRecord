@@ -66,13 +66,13 @@ class AddTransport extends Component {
       <div className="container">
         <div className="container my-2">
           <span
-            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            className="badge rounded-pill bg-light text-dark div-button mx-1 border"
             onClick={() => this.setState({ from: "Central", to: "Tuen Mun", machine: "Bus-962G", fee: 21.8 })}
           >
             Bus-Back
           </span>
           <span
-            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            className="badge rounded-pill bg-light text-dark div-button mx-1 border"
             onClick={() => this.setState({ from: "Tuen Mun", to: "Central", machine: "MTR", fee: 26.7 })}
           >
             MTR-Go
