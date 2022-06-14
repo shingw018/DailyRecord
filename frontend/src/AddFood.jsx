@@ -122,18 +122,6 @@ class AddFood extends Component {
   }
 
   render() {
-    const templateStyle = {
-      margin: "20px",
-      width: "20px",
-      height: "20px",
-      borderRadius: "50%",
-      fontSize: "12px",
-      lineHeight: "20px",
-      textAlign: "center",
-      background: "#808080",
-      color: "#fff",
-    };
-
     return (
       <div className="container">
         <div className="container">
@@ -154,8 +142,87 @@ class AddFood extends Component {
             Save Template
           </button>
         </div>
-        <div className="container m-2">
-          <div style={templateStyle}>1</div>
+        <div className="container mt-3">
+          <span
+            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            onClick={() =>
+              this.setState({
+                foodName: "旬之果物杯(火龍果)",
+                foodEnergy: 71,
+                foodCarbohydrates: 0,
+                foodProtein: 1,
+                foodFat: 0.9,
+                foodSugar: 0,
+                foodFee: 20,
+              })
+            }
+          >
+            果物杯(火龍果)
+          </span>
+          <span
+            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            onClick={() =>
+              this.setState({
+                foodName: "濃香蛋汁牛壽喜燒御結",
+                foodEnergy: 188,
+                foodCarbohydrates: 0,
+                foodProtein: 4.1,
+                foodFat: 4.3,
+                foodSugar: 0,
+                foodFee: 21,
+              })
+            }
+          >
+            壽喜燒御結
+          </span>
+          <span
+            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            onClick={() =>
+              this.setState({
+                foodName: "秋鮭三文魚御結",
+                foodEnergy: 170,
+                foodCarbohydrates: 0,
+                foodProtein: 5.3,
+                foodFat: 2.22,
+                foodSugar: 0,
+                foodFee: 19,
+              })
+            }
+          >
+            三文魚御結
+          </span>
+          <span
+            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            onClick={() =>
+              this.setState({
+                foodName: "蒲燒三文魚腩御結",
+                foodEnergy: 190,
+                foodCarbohydrates: 0,
+                foodProtein: 4.5,
+                foodFat: 4.27,
+                foodSugar: 0,
+                foodFee: 20,
+              })
+            }
+          >
+            三文魚腩御結
+          </span>
+          <span
+            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            onClick={() =>
+              this.setState({
+                foodName: "本格和風燒牛肉御結",
+                foodEnergy: 194,
+                foodCarbohydrates: 0,
+                foodProtein: 4.3,
+                foodFat: 4.5,
+                foodSugar: 0,
+                foodFee: 19,
+              })
+            }
+          >
+            燒牛肉御結
+          </span>
         </div>
         <div className="contianer">
           <form onSubmit={this.handleFoodSubmit} id="foodForm" autoComplete="off" className="m-4">
@@ -176,7 +243,7 @@ class AddFood extends Component {
             </div>
             <div className="form-group m-3">
               <label htmlFor="foodEnergy" className="form-label">
-                Food Energy
+                Food Energy <span style={{ fontSize: "8px" }}>(kcal)</span>
               </label>
               <span
                 className="badge rounded-pill bg-light text-dark float-end"
@@ -197,7 +264,7 @@ class AddFood extends Component {
             </div>
             <div className="form-group m-3">
               <label htmlFor="foodProtein" className="form-label">
-                Food Protein
+                Food Protein <span style={{ fontSize: "8px" }}>(g)</span>
               </label>
               <span
                 className="badge rounded-pill bg-light text-dark float-end"
@@ -218,7 +285,7 @@ class AddFood extends Component {
             </div>
             <div className="form-group m-3">
               <label htmlFor="foodFat" className="form-label">
-                Food Fat
+                Food Fat <span style={{ fontSize: "8px" }}>(g)</span>
               </label>
               <span
                 className="badge rounded-pill bg-light text-dark float-end"
@@ -239,7 +306,7 @@ class AddFood extends Component {
             </div>
             <div className="form-group m-3">
               <label htmlFor="foodSugar" className="form-label">
-                Food Sugar
+                Food Sugar <span style={{ fontSize: "8px" }}>(g)</span>
               </label>
               <span
                 className="badge rounded-pill bg-light text-dark float-end"
@@ -260,7 +327,7 @@ class AddFood extends Component {
             </div>
             <div className="form-group m-3">
               <label htmlFor="foodCarbohydrates" className="form-label">
-                Food Carbohydrates
+                Food Carbohydrates <span style={{ fontSize: "8px" }}>(g)</span>
               </label>
               <span
                 className="badge rounded-pill bg-light text-dark float-end"

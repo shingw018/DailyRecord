@@ -64,12 +64,38 @@ class AddTransport extends Component {
   render() {
     return (
       <div className="container">
+        <div className="container my-2">
+          <span
+            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            onClick={() => this.setState({ from: "Central", to: "Tuen Mun", machine: "Bus-962G", fee: 21.8 })}
+          >
+            Bus-Back
+          </span>
+          <span
+            className="badge rounded-pill bg-light text-dark div-button mx-1"
+            onClick={() => this.setState({ from: "Tuen Mun", to: "Central", machine: "MTR", fee: 26.7 })}
+          >
+            MTR-Go
+          </span>
+        </div>
         <div className="contianer">
           <form onSubmit={this.handleTransportSubmit} id="transportForm">
             <div className="form-group m-3">
-              <label htmlFor="from" className="form-label">
+              <label htmlFor="from" className="form-label me-1">
                 From
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark div-button mx-1 border"
+                onClick={() => this.setState({ from: "Central" })}
+              >
+                Central
+              </span>
+              <span
+                className="badge rounded-pill bg-light text-dark div-button mx-1 border"
+                onClick={() => this.setState({ from: "Tuen Mun" })}
+              >
+                Tuen Mun
+              </span>
               <input
                 type="text"
                 className="form-control"
@@ -82,9 +108,27 @@ class AddTransport extends Component {
               />
             </div>
             <div className="form-group m-3">
-              <label htmlFor="to" className="form-label">
+              <label htmlFor="to" className="form-label me-1">
                 To
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark div-button mx-1 border"
+                onClick={() => this.setState({ to: "Central" })}
+              >
+                Central
+              </span>
+              <span
+                className="badge rounded-pill bg-light text-dark div-button mx-1 border"
+                onClick={() => this.setState({ to: "Tuen Mun" })}
+              >
+                Tuen Mun
+              </span>
+              <span
+                className="badge rounded-pill bg-light text-dark div-button mx-1 border"
+                onClick={() => this.setState({ to: "Shatin" })}
+              >
+                Shatin
+              </span>
               <input
                 type="text"
                 className="form-control"
@@ -97,9 +141,21 @@ class AddTransport extends Component {
               />
             </div>
             <div className="form-group m-3">
-              <label htmlFor="machine" className="form-label">
+              <label htmlFor="machine" className="form-label me-1">
                 Machine
               </label>
+              <span
+                className="badge rounded-pill bg-light text-dark div-button mx-1 border"
+                onClick={() => this.setState({ machine: "Bus-962G" })}
+              >
+                Bus-962G
+              </span>
+              <span
+                className="badge rounded-pill bg-light text-dark div-button mx-1 border"
+                onClick={() => this.setState({ machine: "MTR" })}
+              >
+                MTR
+              </span>
               <input
                 type="text"
                 className="form-control"
