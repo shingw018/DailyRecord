@@ -27,7 +27,6 @@ class AddFood extends Component {
     this.handleFoodFeeChange = this.handleFoodFeeChange.bind(this);
     this.setAllNutriZero = this.setAllNutriZero.bind(this);
     this.resetForm = this.resetForm.bind(this);
-    this.saveFood = this.saveFood.bind(this);
     this.btnNoFocus = this.btnNoFocus.bind(this);
   }
 
